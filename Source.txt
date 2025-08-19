@@ -983,7 +983,7 @@ local function BlurModule(Frame)
 
 	local frame = Instance.new('Frame')
 	frame.Parent = Frame
-	frame.Size = UDim2.new(0.95, 0, 0.95, 0)
+	frame.Size = UDim2.new(0.95, 0, 0.8, 0)
 	frame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	frame.AnchorPoint = Vector2.new(0.5, 0.5)
 	frame.BackgroundTransparency = 1
@@ -1600,7 +1600,6 @@ local MinSize
 	Main.Visible = true
 	Main.BackgroundTransparency = 1
 	Main.Size = WindowSettings.Size
-	Main.Size = UDim2.fromOffset(Main.Size.X.Offset - 70, Main.Size.Y.Offset - 55)
 	Main.Parent.ShadowHolder.Size = Main.Size
 	LoadingFrame.Frame.Frame.Title.TextTransparency = 1
 	LoadingFrame.Frame.Frame.Subtitle.TextTransparency = 1
