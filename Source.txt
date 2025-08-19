@@ -49,7 +49,7 @@ end
 local IconModule = {
 	Lucide = nil,
 	Material = {
-		["accessibility"] = "rbxassetid://10709751939",
+["accessibility"] = "rbxassetid://10709751939",
 ["activity"] = "rbxassetid://10709752035",
 ["air-vent"] = "rbxassetid://10709752131",
 ["airplay"] = "rbxassetid://10709752254",
@@ -1420,7 +1420,7 @@ function Luna:Notification(data) -- action e.g open messages
 		data = Kwargify({
 			Title = "Missing Title",
 			Content = "Missing or Unknown Content",
-			Icon = "view_in_ar",
+			Icon = "home",
 			ImageSource = "Material"
 		}, data or {})
 
@@ -2056,7 +2056,7 @@ end)
 		TabSettings = Kwargify({
 			Name = "Tab",
 			ShowTitle = true,
-			Icon = "view_in_ar",
+			Icon = "home",
 			ImageSource = "Material" 
 		}, TabSettings or {})
 
