@@ -1,0 +1,184 @@
+local DarkLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/totallynothimplayz/DarklibV6/refs/heads/main/Source.txt", true))()
+
+local Window = DarkLib:CreateWindow({
+	Name = "You Hub Name (Give space at the end)", 
+	Subtitle = "Idk ", 
+	LogoID = "10734897102", 
+	Size = UDim2.new(0.95, 0, 0.8, 0)
+	LoadingEnabled = true, 
+	LoadingTitle = "DarkMoon X", 
+	LoadingSubtitle = "Loading...", 
+
+	ConfigSettings = {
+		RootFolder = nil, 
+		ConfigFolder = "ScriptFolderName" 
+	},
+
+	KeySystem = false, 
+	KeySettings = {
+		Title = "Hub Name ",
+		Subtitle = " Key System",
+		Note = "Enter the Key Obtained for the Hub Name",
+		SaveInRoot = false, 
+		SaveKey = true, 
+		Key = {"You Key" --[[ if you want to make a loadstring contaning the key just put it here without " " ]] }, 
+		SecondAction = {
+			Enabled = false, 
+			Type = "Discord", 
+			Parameter = "You Discord Invite" 
+		}
+	}
+})
+
+
+local Tab_1 = Window:CreateTab({
+	Name = "TabName",
+	Icon = "info",
+	ImageSource = "Material", --if you want use By ID set to Custom
+	ShowTitle = true
+})
+
+local Tab_2 = Window:CreateTab({
+	Name = "TabName",
+	Icon = "10734897102",
+	ImageSource = "Custom",
+	ShowTitle = true
+})
+
+local Tab_3 = Window:CreateTab({
+	Name = "TabName",
+	Icon = "gamepad",
+	ImageSource = "Material",
+	ShowTitle = true
+})
+
+local SettingsTab = Window:CreateTab({
+	Name = "Configs",
+	Icon = "settings",
+	ImageSource = "Material",
+	ShowTitle = true
+})
+
+Tab_1:CreateSection("Section")
+
+Tab_1:CreateLabel({
+	Text = "Text",
+	Style = 1 -- sytle 1 is a message, 2 is a success and 3 is a warning/error
+})
+
+Tab_1:CreateParagraph({
+	Title = "Title",
+	Text = "Text"
+})
+
+Tab_1:CreateDivider()
+
+local Button_1 = Tab_1:CreateButton({
+	Name = "Button With Desc",
+	Description = "Description is optional, if you dont want use nil",
+	Callback = function()
+		--Function Here
+		print("Hi")
+	end
+})
+
+local Button_1 = Tab_1:CreateButton({
+	Name = "Button Without Desc",
+	Description = nil, --nil = no description
+	Callback = function()
+		--Function Here
+		print("Hi")
+	end
+})
+
+local TextBox = Tab_1:CreateInput({
+	Name = "Text",
+	Description = "Optional",
+	PlaceholderText = "PlaceHolder",
+	CurrentValue = "",
+	Numeric = false, -- Numebers Only
+	MaxCharacters = 700, --Max Chars
+	Enter = false, --Need press Enter for works or send in mobile
+	Callback = function(Text)
+		--Function Here
+		print(Text)
+	end
+}, "Flag") 
+
+local Slider = Tab_1:CreateSlider({
+	Name = "Text",
+	Range = {1, 100}, --Min, Max
+	Increment = 1,
+	CurrentValue = "1",
+	Callback = function(Value)
+		--Function Here
+		print(Value)
+	end
+}, "Flag")
+
+local Toggle = Tab_1:CreateToggle({
+	Name = "Text",
+	Description = "Optional",
+	CurrentValue = false,
+	Callback = function(Value)
+		--Function Here
+		print(Value)
+	end
+}, "Flag")
+
+local DropDown = Tab_1:CreateDropdown({
+	Name = "Text",
+	Description = "Optional",
+	Options = {"Option 1", "Option 2", "Option 3"},
+	CurrentOption = {"Option 1"},
+	MultipleOptions = false, --Select Multiple Options 
+	Callback = function(Option)
+		--Function Here
+		print(Option)
+	end
+}, "Flag")
+
+SettingsTab:CreateSection("Hub Configs")
+
+local UIBind = SettingsTab:CreateBind({
+	Name = "Toggle UI Key",
+	Description = "Key to show/hide the interface",
+	CurrentBind = "K",
+	HoldToInteract = false,
+	Callback = function()
+	  --Function Here
+	
+	end,
+	OnChangedCallback = function(Bind)
+	  print(Bind)
+		Window.Bind = Bind -- Optional
+	end
+}, "UIToggleBind")
+
+
+SettingsTab:BuildConfigSection() --optional
+SettingsTab:BuildThemeSection() --Optional
+
+--Remove If You Don't want Home Page
+Window:CreateHomeTab({
+	SupportedExecutors = {}, 
+	DiscordInvite = "Invite", 
+	Icon = 1, 
+})
+------------------------------
+
+DarkLib:Notification({
+	Title = "Title",
+	Icon = "check_circle",
+	ImageSource = "Material", --You Can Use Custom if you want
+	Content = "Content",
+	Duration = 5 --Notification Duration in seconds
+})
+
+
+--[[
+  FLAGS NEED BE UNIQUE
+  YOU CAN USE "Custom" IN EVERYTHING YOU HAVE "IN EVERYTHING THAT HAS "ImageSource"
+  "Custom" SOURCE DON'T NEED "rbxassetid://"
+  I DON'T RECOMMEND USE "Lucide"
+]]
