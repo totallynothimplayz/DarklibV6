@@ -100,8 +100,7 @@ Tab1:CreateLabel({
 
 **Argument 2: Style (type: Number)**
 
-## 
-Add a Paragraph
+## Add a Paragraph
 ```luau
 Tab1:CreateParagraph({
 	Title = "Title",
