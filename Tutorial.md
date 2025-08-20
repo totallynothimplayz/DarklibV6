@@ -243,7 +243,7 @@ All Library Functions!
 
 3. Window:CreateHomeTab({
 	 SupportedExecutors = {}, 
-	 DiscordInvite = "Invite", -- dont put discord.gg just put the last part without/
+	 DiscordInvite = "Invite", -- dont put discord.gg
 	Icon = 1, 
  })
 
