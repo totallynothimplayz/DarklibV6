@@ -1531,22 +1531,6 @@ local function Unhide(Window, currentTab)
 end
 
 
-
-local function Maximise(Window)
-	Window.Controls.ToggleSize.ImageLabel.Image = "rbxassetid://10137941941"
-	tween(Window, {Size = MainSize})
-	Window.Elements.Visible = true
-	Window.Navigation.Visible = true
-end
-
-local function Minimize(Window)
-	Window.Controls.ToggleSize.ImageLabel.Image = "rbxassetid://11036884234"
-	Window.Elements.Visible = false
-	Window.Navigation.Visible = false
-	tween(Window, {Size = MinSize})
-end
-
-
 function Luna:CreateWindow(WindowSettings)
 
 	WindowSettings = Kwargify({
@@ -1589,11 +1573,6 @@ function Luna:CreateWindow(WindowSettings)
 
 	local Window = { Bind = Enum.KeyCode.K, CurrentTab = nil, State = true, Size = false, Settings = nil }
 
-local MainSize
-local MinSize 
-	MainSize = WindowSettings.Size
-	MinSize = UDim2.fromOffset(Camera.ViewportSize.X - 275, 42)
-
 	Main.Title.Title.Text = WindowSettings.Name
 	Main.Title.subtitle.Text = WindowSettings.Subtitle
 	Main.Logo.Image = "rbxassetid://" .. WindowSettings.LogoID
@@ -1613,6 +1592,24 @@ local MinSize
 	LoadingFrame.Frame.Frame.Subtitle.Text = WindowSettings.LoadingSubtitle
 	LoadingFrame.Version.Text = LoadingFrame.Frame.Frame.Title.Text == "Roblox Scripts" and Release or "Roblox Scripts"
 
+local MinSize 
+	MinSize = UDim2.fromOffset(Camera.ViewportSize.X - 275, 42)
+local MainSize
+	MainSize = WindowSettings.Size
+	
+local function Maximise(Window)
+	Window.Controls.ToggleSize.ImageLabel.Image = "rbxassetid://10137941941"
+	tween(Window, {Size = MainSize})
+	Window.Elements.Visible = true
+	Window.Navigation.Visible = true
+end
+
+local function Minimize(Window)
+	Window.Controls.ToggleSize.ImageLabel.Image = "rbxassetid://11036884234"
+	Window.Elements.Visible = false
+	Window.Navigation.Visible = false
+	tween(Window, {Size = MinSize})
+end
 
 local Logo = Main.Logo
 
