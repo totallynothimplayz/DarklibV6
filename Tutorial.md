@@ -55,10 +55,12 @@ KeySystem = false,
 
 ## Create Notifications
 ```luau
-local Notify = NewNotify({
-Title = "Notification Title",
-Description = "Notification Description.",
-Time = 10
+DarkLib:Notification({
+	Title = "Made By (Your Name)",
+	Icon = "check_circle",
+	ImageSource = "Material", --You Can Use Custom if you want
+	Content = "Credits To (Your Name)",
+	Duration = 7 --Notification Duration in seconds
 })
 ```
 **Argument 1: Notification Title (type: string)**
