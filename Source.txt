@@ -3149,7 +3149,7 @@ end)
 					Name = "Dropdown",
 					Description = nil,
 					Options = {"Option 1", "Option 2"},
-					CurrentOption = {"Option 1"},
+					CurrentOption = nil,
 					MultipleOptions = false,
 					SpecialType = nil, -- currently onl player, might add more soon
 					Callback = function(Options)
